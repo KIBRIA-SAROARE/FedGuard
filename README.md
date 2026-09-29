@@ -149,4 +149,18 @@ If you use the FedGuard-DC study materials, please cite the FedGuard-DC paper:
 - [FedGuard-DC paper (arXiv:2608.19155, PDF)](https://arxiv.org/pdf/2608.19155)
 - [arXiv abstract and citation metadata](https://arxiv.org/abs/2608.19155)
 
+```bibtex
+@misc{saroare2026fedguarddc,
+  author        = {Saroare, Md Kibria and Ahmed, Md Rubel},
+  title         = {{FedGuard-DC}: Privacy-Preserving Federated Load Forecasting
+                   and Cyber-Attack Detection for Data-Center Loads
+                   in Transmission Systems},
+  year          = {2026},
+  eprint        = {2608.19155},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CR},
+  url           = {https://arxiv.org/abs/2608.19155}
+}
+```
+
 For experiments using the FedGuard-PT dataset or Jetson replay code, cite the corresponding publication and record the repository commit and dataset version. Use the publication record for the exact title, author list and BibTeX metadata.
