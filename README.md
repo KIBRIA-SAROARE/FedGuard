@@ -1,4 +1,4 @@
-# FedGuard-DC
+# FedGuard
 
 Federated load forecasting and cyber-attack detection for AI data-center loads.
 
