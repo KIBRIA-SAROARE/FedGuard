@@ -1,22 +1,26 @@
 # FedGuard-DC
 
-Privacy-preserving federated load forecasting and cyber-attack detection for AI data-center loads in transmission systems.
+Federated load forecasting and cyber-attack detection for AI data-center loads.
 
-This repository holds the simulation datasets and notebooks for the FedGuard-DC study.
+This repository contains the FedGuard-DC study materials and the FedGuard-PT dataset and Jetson replay experiment. Use `FedGuard-DC/` for the FedGuard-DC notebook, data and model materials. Use `FedGuard-PT/dataset/` with `FedGuard-PT/fgpt_jetson/` to reproduce the transmission-system replay experiment. Select the dataset required by the corresponding code; these directories should not be treated as interchangeable.
 
-```
-FedGuard-DC_v1/            first-generation model and notebooks
-FedGuard-DC_v2/dataset/    current dataset  <- use this one
-  clean/                   attack-free records
-  attacked/                measurement-path FDIA records
-  raw/                     1 kHz .mat records
-  manifest.csv
-  attack_log.csv
+```text
+FedGuard-DC/
+  Copy_of_FedGuard_DC_NAPS2026.ipynb
+  copy_of_fedguard_dc_naps2026.py
+  Data/
+  Figures/
+  Modified IEEE 39 Bus with Data Center Simulink/
+FedGuard-PT/
+  dataset/
+  fgpt_jetson/
 ```
 
 ---
 
-## v2 dataset
+## Transmission-system dataset (v2)
+
+Dataset path: `FedGuard-PT/dataset/`.
 
 Six heterogeneous AI data centers embedded in the IEEE 39-bus New England system, simulated in MATLAB/Simulink R2023b (Simscape Electrical Specialized Power Systems, **phasor** mode, 60 Hz).
 
@@ -58,7 +62,9 @@ Two attack classes are kept separate on purpose:
 | `S10_atk_cooling` | cooling setpoint manipulation, DC6, 200–250 s |
 | `S11_fault_plus_atk` | fault at bus 16 + load-altering on DC6, 62–92 s |
 
-`S11` is the discrimination case: a detector should flag DC6 without flagging the fault.
+`S11` tests whether a detector can distinguish the load-altering attack on DC6 from the genuine grid fault. Evaluate attack detection at DC6 and false alarms at untargeted sites separately. The current Jetson experiment monitors DC1, so its S11 result measures untargeted-site false alarms rather than detection of the DC6 attack.
+
+`clean/` contains exports before additional measurement-path FDIA is applied. S01–S06 are attack-free simulation scenarios. S07–S11 contain control-path attacks and must not be treated as benign records merely because they are stored in `clean/`. Files in `attacked/` add measurement-path corruption to the underlying scenario; distinguish the underlying control attack from the added measurement attack.
 
 ### File naming
 
@@ -82,35 +88,60 @@ raw/S<NN>_<event>.mat                       1 kHz, fields DC1..DC6
 
 Attacked files add `label` (0/1) and `attack_type` (0–5).
 
-### Notes for users
+### Preprocessing, trusted inputs and leakage
 
-- Drop `t < 2 s`. That window is model soft-start, not physics.
-- `ups_state`, `soc`, `vdc_pu`, `P_batt_MW` and `P_it_served_MW` are left uncorrupted in the attacked files so they can serve as ground truth. Drop them from the feature set when evaluating measurement-path detectors, or they leak the label.
-- The 100 Hz CSVs are decimated by a plain 10:1 stride with no anti-alias filter. Use `raw/*.mat` if you need content above 50 Hz.
-- The AI workload is synthetic, not a measured facility trace.
-- `S02`, `S06` and `S11` contain a dc-link overvoltage excursion on DC1 and DC6 caused by rectifier current-limit release at cooling-motor restart. Exclude those six files from any experiment that uses `vdc_pu`.
+- Exclude samples with `t < 2 s` before constructing windows. This interval contains model soft-start transients. The Jetson loader retains samples from 2 s onward, so the processed record spans approximately 298 s.
+- Measurement-path attacked files leave `ups_state`, `soc`, `vdc_pu`, `P_batt_MW` and `P_it_served_MW` uncorrupted as reference channels. Exclude these channels, and features derived from them, when evaluating a detector whose threat model provides no independently trusted internal telemetry.
+- Never use `label`, `attack_type` or attack-window metadata as detector inputs. If trusted reference channels are used, identify them explicitly and report that experiment separately from a telemetry-only evaluation. The current Jetson feature pipeline uses `ups_state`; its results therefore require a stated assumption that this channel remains trustworthy.
+- Keep each original scenario and its attacked derivatives in the same evaluation partition. Split records before constructing overlapping windows. Fit calibration, normalization, fusion coefficients and thresholds using the designated training or validation records only.
+
+### Sampling and model limitations
+
+The 100 Hz CSV exports retain every tenth sample of the 1 kHz records without anti-alias filtering. Frequencies above 50 Hz can therefore alias into the exported band. Use the 1 kHz `raw/*.mat` records for higher-frequency analysis or apply a documented low-pass filter before generating a new 100 Hz export. Filtering an existing 100 Hz CSV cannot undo aliasing. The 1 kHz logging rate does not make this phasor-mode simulation an EMT or switching-waveform dataset.
+
+The AI workload is synthetic, not a measured facility trace.
+
+The v2 records for DC1 and DC6 in S02, S06 and S11 contain dc-link overvoltage excursions. The model diagnosis attributes these excursions to rectifier current-limit release during cooling-motor restart; this explanation should be supported by a documented validation before being presented as a validated cause. Exclude these six scenario/site records and their corresponding attacked derivatives from analyses using `vdc_pu` or features derived from it. For analyses using other channels, document whether the records are retained and assess whether the excursions affect the reported results.
 
 ---
 
-## v1
+## Jetson replay experiment
 
-`FedGuard-DC_v1/` is the earlier model and notebook set, kept for reference. Superseded by v2.
+See [the Jetson README](FedGuard-PT/fgpt_jetson/README.md) for setup, outputs and experiment stages.
+
+The Jetson Orin Nano experiment replays simulated IEEE 39-bus telemetry with synthetic AI workloads at a scheduled 100 Hz wall-clock rate. It does not acquire live field measurements. DC1 is monitored; the other five sites provide precomputed peer-event information. Six federated clients are emulated in one process, and no physical network link is exercised. Communication figures describe update payload sizes rather than measured network traffic or transfer latency.
+
+CSEC values are computed from complete records before replay and withheld until the implemented availability conditions are met. This tests delayed release of precomputed values, rather than online peer-event extraction and descriptor transport. Descriptor transport delay defaults to 0 ms. Report provisional and released decisions separately, including CSEC waiting time.
+
+### Reproduction
+
+From a checkout of this repository:
+
+```bash
+cd FedGuard-PT/fgpt_jetson
+chmod +x *.sh
+./setup_jetson.sh
+./get_data.sh 1
+./run_experiment.sh full
+```
+
+Record the exact repository commit, dataset hashes, Python and package versions, Jetson software version, power mode, clock settings, fan settings and command-line arguments. Use a fresh output directory when code, data or configuration changes, because completed stages are skipped on restart.
+
+The experiment uses five held-out disturbance scenarios, S02–S06, plus a FULL fold for control-path tests. Calibration and fusion validation use S01. Windows contain 128 samples with a 40-sample hop at 100 Hz. Record the configuration and separate validation and test attack seeds with each result.
+
+The Jetson configuration uses clipping with zero differential-privacy noise (`DP_SIGMA = 0.0`). These runs do not establish a differential-privacy guarantee. Federated processing avoids centralizing raw telemetry in the intended architecture, but model updates and event descriptors still require an explicit privacy threat model.
+
+### Interpreting results
+
+- T1, T2, T3a and T3 are summarized over five held-out-scenario streams each. A1–A5 are summarized over 25 streams: five attack types across five held-out scenarios. Error bars show population standard deviation across the included stream-level metrics, not confidence intervals or repeated-seed uncertainty.
+- Processing latency, start lateness, deadline misses, decision cadence and CSEC release wait are distinct quantities. Report them separately.
+- Detection delays in `attack_events` use simulation release times; they are not measured end-to-end wall-clock detection delays. Delay summaries include detected events only and must be accompanied by detected and total event counts.
+- By default, `paper_figures.py` excludes streams whose `metrics.json` does not mark them as real-time. This flag identifies the pacing mode; scheduling performance must be assessed from the recorded timing and deadline-miss results.
+- Use `results_rt/` for paced replay results. The earlier `results/` run measured throughput without wall-clock pacing; do not combine it with real-time results.
+- The September 18 commit `5c96a0098295f347415ef09b2f5296135c196e8d` introduced a corrupted A1–A5 label in `Table_rt_detection.tex`. Use `A1--A5` in LaTeX tables. Its small floating-point changes in `numbers.json` should not be interpreted as performance improvements.
 
 ---
 
 ## Citation
 
-If you use this dataset or find this repository useful, please cite:
-
-> FedGuard-DC: Privacy-Preserving Federated Load Forecasting and Cyber-Attack Detection for Data-Center Loads in Transmission Systems. arXiv:2608.19155. https://arxiv.org/abs/2608.19155
-
-```bibtex
-@article{fedguarddc2026,
-  title   = {FedGuard-DC: Privacy-Preserving Federated Load Forecasting and
-             Cyber-Attack Detection for Data-Center Loads in Transmission Systems},
-  author  = {},
-  journal = {arXiv preprint arXiv:2608.19155},
-  year    = {2026},
-  url     = {https://arxiv.org/abs/2608.19155}
-}
-```
+Cite the publication corresponding to the experiment used, and record the repository commit and dataset version. Verify the publication title, author list and identifier against the publication record before copying its BibTeX entry. The previously supplied BibTeX entry had an empty author field and has been removed pending metadata verification.
