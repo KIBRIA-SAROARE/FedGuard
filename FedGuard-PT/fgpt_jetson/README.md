@@ -102,11 +102,3 @@ results_rt/paper/Fig_rt_*.pdf|png  Table_rt_*.tex|csv  numbers.json
 Every value drawn is also written to `numbers.json`, `Table_rt_detection.tex`, `Table_rt_edge_resources.tex` and `Table_rt_all_streams.csv`. Copy numbers into the paper from those files only.
 `paper_figures.py` refuses streams that were not run at 100 Hz wall clock.
 
-## 6. Statements the paper must carry
-
-- The telemetry is simulated (IEEE 39-bus phasor model, synthetic AI workload) and replayed in real time on the board.
-- Federated training runs all six sites in one process on the board. Per-site time and bytes are measured; no network link is exercised.
-- CSEC descriptors are released causally from pre-computed peer events, with an assumed 0 ms transport delay.
-- Only DC1 runs as a live monitor. The other five sites supply CSEC descriptors.
-- Weights are trained on the board, so detection numbers are not identical to the notebook run.
-- The 2026-09-15 board run (`results/`, not paced) measured throughput, not real-time behaviour. Do not mix it with `results_rt/`.
