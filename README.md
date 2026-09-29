@@ -164,3 +164,23 @@ If you use the FedGuard-DC study materials, please cite the FedGuard-DC paper:
 ```
 
 For experiments using the FedGuard-PT dataset or Jetson replay code, cite the corresponding publication and record the repository commit and dataset version. Use the publication record for the exact title, author list and BibTeX metadata.
+
+### DC-CLM: data-center load modeling
+
+If you use or discuss the data-center composite load modeling approach, please also cite:
+
+- [DC-CLM: Extending the WECC Composite Load Model for AI Data Center Dynamics (PDF)](https://arxiv.org/pdf/2609.22093)
+- [arXiv abstract and citation metadata](https://arxiv.org/abs/2609.22093)
+
+```bibtex
+@misc{saroare2026dcclm,
+  author        = {Saroare, Md Kibria and Ahmed, Md Rubel and Hussain, Arif},
+  title         = {{DC-CLM}: Extending the {WECC} Composite Load Model
+                   for {AI} Data Center Dynamics},
+  year          = {2026},
+  eprint        = {2609.22093},
+  archivePrefix = {arXiv},
+  primaryClass  = {eess.SP},
+  url           = {https://arxiv.org/abs/2609.22093}
+}
+```
