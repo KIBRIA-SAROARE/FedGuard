@@ -144,4 +144,9 @@ The Jetson configuration uses clipping with zero differential-privacy noise (`DP
 
 ## Citation
 
-Cite the publication corresponding to the experiment used, and record the repository commit and dataset version. Verify the publication title, author list and identifier against the publication record before copying its BibTeX entry. The previously supplied BibTeX entry had an empty author field and has been removed pending metadata verification.
+If you use the FedGuard-DC study materials, please cite the FedGuard-DC paper:
+
+- [FedGuard-DC paper (arXiv:2608.19155, PDF)](https://arxiv.org/pdf/2608.19155)
+- [arXiv abstract and citation metadata](https://arxiv.org/abs/2608.19155)
+
+For experiments using the FedGuard-PT dataset or Jetson replay code, cite the corresponding publication and record the repository commit and dataset version. Use the publication record for the exact title, author list and BibTeX metadata.
