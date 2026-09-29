@@ -9,7 +9,7 @@ cd "$(dirname "$0")"; mkdir -p data
 if [ -d ../dataset/clean ]; then
   ln -sfn "$(cd ../dataset && pwd)" data/dataset
 else
-  REPO_URL="${REPO_URL:-https://github.com/KIBRIA-SAROARE/FedGuard-DC.git}"
+  REPO_URL="${REPO_URL:-https://github.com/KIBRIA-SAROARE/FedGuard.git}"
   [ -d data/repo/.git ] || git clone --filter=blob:none --no-checkout --depth 1 "$REPO_URL" data/repo
   cd data/repo
   git sparse-checkout init --no-cone
