@@ -7,7 +7,7 @@ This is a hardware-in-the-loop replay of the simulated IEEE 39-bus telemetry, no
 ## 1. Setup (once)
 
 ```bash
-cd FedGuard-DC/FedGuard-PT/fgpt_jetson      # or wherever this folder is
+cd FedGuard/FedGuard-PT/fgpt_jetson      # or wherever this folder is
 chmod +x *.sh
 ./setup_jetson.sh     # apt: numpy pandas scipy sklearn matplotlib psutil tk tmux fonts
 ./get_data.sh 1       # links ../dataset if present, otherwise sparse-clones FedGuard-PT/dataset
