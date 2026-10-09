@@ -184,3 +184,6 @@ If you use or discuss the data-center composite load modeling approach, please a
   url           = {https://arxiv.org/abs/2609.22093}
 }
 ```
+## Acknowledgment
+
+This research was funded in part by U.S. National Science Foundation under Grant Number OIA-2437963 and Louisiana Board of Regents.
