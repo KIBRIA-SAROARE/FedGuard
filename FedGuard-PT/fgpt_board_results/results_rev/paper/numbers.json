@@ -1,0 +1,784 @@
+{
+ "detection_by_regime": {
+  "T1": {
+   "roc_auc": [
+    0.9980663088508731,
+    0.002658160346568352,
+    5
+   ],
+   "f1": [
+    0.9848448242807676,
+    0.014365590647137789,
+    5
+   ],
+   "precision": [
+    0.970531763702686,
+    0.027534298259891694,
+    5
+   ],
+   "recall": [
+    1.0,
+    0.0,
+    5
+   ],
+   "fpr": [
+    0.008537930628956983,
+    0.008941566207324723,
+    5
+   ]
+  },
+  "T2": {
+   "roc_auc": [
+    0.9999954009803271,
+    5.6381720477035765e-06,
+    5
+   ],
+   "f1": [
+    0.9881352155820522,
+    0.016617962749091535,
+    5
+   ],
+   "precision": [
+    0.9770706494378253,
+    0.03178395292137457,
+    5
+   ],
+   "recall": [
+    1.0,
+    0.0,
+    5
+   ],
+   "fpr": [
+    0.006767215147349749,
+    0.010285600695429553,
+    5
+   ]
+  },
+  "T3a": {
+   "roc_auc": [
+    0.679606054554022,
+    0.1683145987333787,
+    5
+   ],
+   "f1": [
+    0.3866945127995165,
+    0.2579306965254483,
+    5
+   ],
+   "precision": [
+    0.7774407814407814,
+    0.38959108910953505,
+    5
+   ],
+   "recall": [
+    0.2751715797430083,
+    0.21222079798916219,
+    5
+   ],
+   "fpr": [
+    0.0016522525626668963,
+    0.0015686936806563456,
+    5
+   ]
+  },
+  "T3": {
+   "roc_auc": [
+    0.736893198005542,
+    0.1597453727689451,
+    5
+   ],
+   "f1": [
+    0.6345459138876093,
+    0.13239141917264033,
+    5
+   ],
+   "precision": [
+    0.9837344877344878,
+    0.016704693287137605,
+    5
+   ],
+   "recall": [
+    0.48114285714285704,
+    0.14265362575586726,
+    5
+   ],
+   "fpr": [
+    0.0016522525626668963,
+    0.0015686936806563456,
+    5
+   ]
+  },
+  "U1": {
+   "roc_auc": [
+    1.0,
+    4.965068306494546e-17,
+    5
+   ],
+   "f1": [
+    0.9881352155820522,
+    0.016617962749091535,
+    5
+   ],
+   "precision": [
+    0.9770706494378253,
+    0.03178395292137457,
+    5
+   ],
+   "recall": [
+    1.0,
+    0.0,
+    5
+   ],
+   "fpr": [
+    0.006767215147349749,
+    0.010285600695429553,
+    5
+   ]
+  },
+  "A": {
+   "roc_auc": [
+    0.9977172914405611,
+    0.006620502135394449,
+    25
+   ],
+   "f1": [
+    0.9858717491092078,
+    0.01812589485386376,
+    25
+   ],
+   "precision": [
+    0.9751110557353816,
+    0.033830648378347705,
+    25
+   ],
+   "recall": [
+    0.9975573280159522,
+    0.009131208886823767,
+    25
+   ],
+   "fpr": [
+    0.008496342388065318,
+    0.011246597926228221,
+    25
+   ]
+  },
+  "no_attack": {
+   "fpr": [
+    0.005517241379310344,
+    0.007753638246927005,
+    5
+   ]
+  }
+ },
+ "disturbance_fpr": {
+  "S02_fault_100ms": {
+   "fpr": 0.004137931034482759,
+   "windows": 725,
+   "event_window": {
+    "event_time_s": 60.0,
+    "neg_windows": 29,
+    "false_alarms": 3
+   }
+  },
+  "S03_fault_250ms": {
+   "fpr": 0.020689655172413793,
+   "windows": 725,
+   "event_window": {
+    "event_time_s": 60.0,
+    "neg_windows": 29,
+    "false_alarms": 7
+   }
+  },
+  "S04_line_trip": {
+   "fpr": 0.0,
+   "windows": 725,
+   "event_window": {
+    "event_time_s": 90.0,
+    "neg_windows": 29,
+    "false_alarms": 0
+   }
+  },
+  "S05_load_step": {
+   "fpr": 0.0,
+   "windows": 725,
+   "event_window": {
+    "event_time_s": 120.0,
+    "neg_windows": 29,
+    "false_alarms": 0
+   }
+  },
+  "S06_multi_event": {
+   "fpr": 0.002758620689655172,
+   "windows": 725,
+   "event_window": {
+    "event_time_s": 60.0,
+    "neg_windows": 29,
+    "false_alarms": 2
+   }
+  }
+ },
+ "detection_delay_s": {
+  "T1": {
+   "events": 13,
+   "detected": 13,
+   "provisional_detected": 13,
+   "final": [
+    0.8369230769230763,
+    0.8709886921052175,
+    13
+   ],
+   "provisional": [
+    0.2623076923076896,
+    0.1214118132735289,
+    13
+   ]
+  },
+  "T2": {
+   "events": 13,
+   "detected": 13,
+   "provisional_detected": 13,
+   "final": [
+    0.2623076923076896,
+    0.1214118132735289,
+    13
+   ],
+   "provisional": [
+    0.2623076923076896,
+    0.1214118132735289,
+    13
+   ]
+  },
+  "T3a": {
+   "events": 13,
+   "detected": 9,
+   "provisional_detected": 9,
+   "final": [
+    5.035555555555555,
+    9.617912814825276,
+    9
+   ],
+   "provisional": [
+    5.035555555555555,
+    9.617912814825276,
+    9
+   ]
+  },
+  "T3": {
+   "events": 13,
+   "detected": 12,
+   "provisional_detected": 11,
+   "final": [
+    9.942499999999995,
+    12.471204248855306,
+    12
+   ],
+   "provisional": [
+    4.302727272727271,
+    8.836690136130352,
+    11
+   ]
+  },
+  "U1": {
+   "events": 13,
+   "detected": 13,
+   "provisional_detected": 13,
+   "final": [
+    0.2623076923076896,
+    0.1214118132735289,
+    13
+   ],
+   "provisional": [
+    0.2623076923076896,
+    0.1214118132735289,
+    13
+   ]
+  },
+  "A1\u2013A5": {
+   "events": 77,
+   "detected": 77,
+   "provisional_detected": 77,
+   "final": [
+    0.675584415584418,
+    0.7962599156453977,
+    77
+   ],
+   "provisional": [
+    0.20948051948052146,
+    0.11363985152346809,
+    77
+   ]
+  },
+  "Ctrl S07": {
+   "events": 1,
+   "detected": 1,
+   "provisional_detected": 1,
+   "final": [
+    0.0800000000000125,
+    0.0,
+    1
+   ],
+   "provisional": [
+    0.0800000000000125,
+    0.0,
+    1
+   ]
+  },
+  "U2 S07": {
+   "events": 1,
+   "detected": 1,
+   "provisional_detected": 1,
+   "final": [
+    0.0800000000000125,
+    0.0,
+    1
+   ],
+   "provisional": [
+    0.0800000000000125,
+    0.0,
+    1
+   ]
+  }
+ },
+ "control_path": {
+  "ctrl_S07_atk_false_ups": {
+   "auc": 1.0,
+   "recall": 1.0,
+   "fpr": 0.10664335664335664,
+   "pos": 75,
+   "valid": 647,
+   "events": [
+    {
+     "t0": 140.0,
+     "t1": 170.0,
+     "detected": true,
+     "delay_s": 0.0800000000000125,
+     "provisional_detected": true,
+     "provisional_delay_s": 0.0800000000000125
+    }
+   ]
+  },
+  "ctrl_hide_S07_atk_false_ups": {
+   "auc": 1.0,
+   "recall": 1.0,
+   "fpr": 0.10664335664335664,
+   "pos": 75,
+   "valid": 647,
+   "events": [
+    {
+     "t0": 140.0,
+     "t1": 170.0,
+     "detected": true,
+     "delay_s": 0.0800000000000125,
+     "provisional_detected": true,
+     "provisional_delay_s": 0.0800000000000125
+    }
+   ]
+  },
+  "ctrl_S08_atk_load_alter": {
+   "auc": NaN,
+   "recall": 0.0,
+   "fpr": 0.02620689655172414,
+   "pos": 0,
+   "valid": 725,
+   "events": []
+  },
+  "ctrl_S09_atk_sensor_spoof": {
+   "auc": NaN,
+   "recall": 0.0,
+   "fpr": 0.023448275862068966,
+   "pos": 0,
+   "valid": 725,
+   "events": []
+  },
+  "ctrl_S10_atk_cooling": {
+   "auc": NaN,
+   "recall": 0.0,
+   "fpr": 0.02620689655172414,
+   "pos": 0,
+   "valid": 725,
+   "events": []
+  },
+  "ctrl_S11_fault_plus_atk": {
+   "auc": NaN,
+   "recall": 0.0,
+   "fpr": 0.06206896551724138,
+   "pos": 0,
+   "valid": 725,
+   "events": []
+  }
+ },
+ "timing_ms": {
+  "sample_features": {
+   "mean": 0.16817155480384827,
+   "p50": 0.1551080048084259,
+   "p99": 0.32647363781929073,
+   "p999": 0.5650215035677782,
+   "max": 20.874725341796875,
+   "n": 1772599
+  },
+  "sample_with_tcn_window": {
+   "mean": 3.861856460571289,
+   "p50": 3.7198795080184937,
+   "p99": 5.515267286300659,
+   "p999": 6.502688638687183,
+   "max": 28.29717254638672,
+   "n": 45262
+  },
+  "start_lateness": {
+   "mean": 0.07142040133476257,
+   "p50": 0.06855500489473343,
+   "p99": 0.09758000075817108,
+   "p999": 0.4600389540195483,
+   "max": 19.434959411621094,
+   "n": 1817861
+  },
+  "decision_after_target_no_csec_wait": {
+   "mean": 3.944565318424443,
+   "p50": 3.798,
+   "p99": 5.596,
+   "p999": 6.731738000000289,
+   "max": 24.495,
+   "n": 43464
+  },
+  "csec_wait_nonzero": {
+   "mean": 2861.5016685205783,
+   "p50": 1530.0,
+   "p99": 32521.99999999999,
+   "p999": 38991.200000000084,
+   "max": 39710.0,
+   "n": 1798
+  },
+  "windows_waiting_for_csec": 1798,
+  "windows": 45262,
+  "deadline_misses": 11,
+  "samples": 1817861,
+  "streams": 61
+ },
+ "resources": {
+  "idle": {
+   "proc_cpu_pct": {
+    "mean": 0.4166666666666667,
+    "std": 0.832499582916145,
+    "max": 4.0,
+    "n": 240
+   },
+   "sys_cpu_pct": {
+    "mean": 1.4508333333333334,
+    "std": 1.6868607842840961,
+    "max": 10.9,
+    "n": 240
+   },
+   "proc_rss_MiB": {
+    "mean": 13.121500651041666,
+    "std": 0.02180512788951185,
+    "max": 13.14453125,
+    "n": 240
+   },
+   "vdd_in_mW": {
+    "mean": 3161.155462184874,
+    "std": 52.97546791918853,
+    "max": 3421.0,
+    "n": 238
+   },
+   "vdd_cpu_gpu_cv_mW": {
+    "mean": 481.85714285714283,
+    "std": 26.384451021430802,
+    "max": 602.0,
+    "n": 238
+   },
+   "vdd_soc_mW": {
+    "mean": 1008.3529411764706,
+    "std": 10.90107406264304,
+    "max": 1046.0,
+    "n": 238
+   },
+   "gpu_load_pct": {
+    "mean": 0.008403361344537815,
+    "std": 0.12936810351546768,
+    "max": 2.0,
+    "n": 238
+   },
+   "tj_temp_C": {
+    "mean": 43.99970588235294,
+    "std": 0.7539910488395094,
+    "max": 45.062,
+    "n": 238
+   },
+   "ram_used_MiB": {
+    "mean": 3611.0672268907565,
+    "std": 16.440230984717747,
+    "max": 3706.0,
+    "n": 238
+   }
+  },
+  "training (6 sites)": {
+   "proc_cpu_pct": {
+    "mean": 99.66619951586189,
+    "std": 1.295814028173775,
+    "max": 105.6,
+    "n": 7849
+   },
+   "sys_cpu_pct": {
+    "mean": 19.82364632437253,
+    "std": 5.435843996511868,
+    "max": 66.3,
+    "n": 7849
+   },
+   "proc_rss_MiB": {
+    "mean": 395.7822428613518,
+    "std": 31.521937653034087,
+    "max": 455.12109375,
+    "n": 7849
+   },
+   "vdd_in_mW": {
+    "mean": 4198.110969550261,
+    "std": 233.59605982866307,
+    "max": 6050.0,
+    "n": 7849
+   },
+   "vdd_cpu_gpu_cv_mW": {
+    "mean": 1012.6997069690407,
+    "std": 112.27583473992445,
+    "max": 2026.0,
+    "n": 7849
+   },
+   "vdd_soc_mW": {
+    "mean": 1140.865970187285,
+    "std": 25.65760664557556,
+    "max": 1515.0,
+    "n": 7849
+   },
+   "gpu_load_pct": {
+    "mean": 0.9931201426933367,
+    "std": 4.732568089805024,
+    "max": 73.0,
+    "n": 7849
+   },
+   "tj_temp_C": {
+    "mean": 46.20657179258504,
+    "std": 0.7648589439914425,
+    "max": 48.156,
+    "n": 7849
+   },
+   "ram_used_MiB": {
+    "mean": 3924.047139763027,
+    "std": 100.77298176483606,
+    "max": 4189.0,
+    "n": 7849
+   }
+  },
+  "real-time monitor": {
+   "proc_cpu_pct": {
+    "mean": 3.1500938967136154,
+    "std": 1.1555897158134774,
+    "max": 8.0,
+    "n": 36210
+   },
+   "sys_cpu_pct": {
+    "mean": 2.023800055233361,
+    "std": 2.195566124695272,
+    "max": 63.7,
+    "n": 36210
+   },
+   "proc_rss_MiB": {
+    "mean": 178.47102147196907,
+    "std": 4.699970227644691,
+    "max": 185.25,
+    "n": 36210
+   },
+   "vdd_in_mW": {
+    "mean": 3205.2886219276443,
+    "std": 131.52626620699718,
+    "max": 5342.0,
+    "n": 36210
+   },
+   "vdd_cpu_gpu_cv_mW": {
+    "mean": 492.2146644573322,
+    "std": 34.14695988202415,
+    "max": 1592.0,
+    "n": 36210
+   },
+   "vdd_soc_mW": {
+    "mean": 1013.9426677713338,
+    "std": 24.193836003991798,
+    "max": 1482.0,
+    "n": 36210
+   },
+   "gpu_load_pct": {
+    "mean": 0.04476663904998619,
+    "std": 1.3125952132385006,
+    "max": 79.0,
+    "n": 36210
+   },
+   "tj_temp_C": {
+    "mean": 43.84606553438277,
+    "std": 0.5060850203453178,
+    "max": 46.375,
+    "n": 36210
+   },
+   "ram_used_MiB": {
+    "mean": 3782.241093620547,
+    "std": 36.284662408749114,
+    "max": 3865.0,
+    "n": 36210
+   }
+  }
+ },
+ "training": {
+  "FULL": {
+   "wall_s": 716.1847010479978,
+   "fusion_s": 231.48223131600025,
+   "DC1_local_s_per_round": 4.772721868959925,
+   "peak_rss_MiB": 454.7421875,
+   "uplink_B": 3504.0,
+   "downlink_B": 13504.0,
+   "KiB_round": 99.65625,
+   "MiB_total": 2.433013916015625,
+   "params": 3597,
+   "shared": 3376
+  },
+  "S02_fault_100ms": {
+   "wall_s": 650.737468411,
+   "fusion_s": 237.3956281259998,
+   "DC1_local_s_per_round": 4.3282381233201885,
+   "peak_rss_MiB": 412.3984375,
+   "uplink_B": 3504.0,
+   "downlink_B": 13504.0,
+   "KiB_round": 99.65625,
+   "MiB_total": 2.433013916015625,
+   "params": 3597,
+   "shared": 3376
+  },
+  "S03_fault_250ms": {
+   "wall_s": 644.8377859350003,
+   "fusion_s": 238.41412169600153,
+   "DC1_local_s_per_round": 4.295577400040056,
+   "peak_rss_MiB": 411.8125,
+   "uplink_B": 3504.0,
+   "downlink_B": 13504.0,
+   "KiB_round": 99.65625,
+   "MiB_total": 2.433013916015625,
+   "params": 3597,
+   "shared": 3376
+  },
+  "S04_line_trip": {
+   "wall_s": 640.2106323009975,
+   "fusion_s": 233.61857751299976,
+   "DC1_local_s_per_round": 4.263885960799817,
+   "peak_rss_MiB": 414.80078125,
+   "uplink_B": 3504.0,
+   "downlink_B": 13504.0,
+   "KiB_round": 99.65625,
+   "MiB_total": 2.433013916015625,
+   "params": 3597,
+   "shared": 3376
+  },
+  "S05_load_step": {
+   "wall_s": 651.5993951220007,
+   "fusion_s": 238.79234558100143,
+   "DC1_local_s_per_round": 4.343284741879615,
+   "peak_rss_MiB": 414.7578125,
+   "uplink_B": 3504.0,
+   "downlink_B": 13504.0,
+   "KiB_round": 99.65625,
+   "MiB_total": 2.433013916015625,
+   "params": 3597,
+   "shared": 3376
+  },
+  "S06_multi_event": {
+   "wall_s": 637.773178288,
+   "fusion_s": 236.76335760799702,
+   "DC1_local_s_per_round": 4.249029409799696,
+   "peak_rss_MiB": 411.46484375,
+   "uplink_B": 3504.0,
+   "downlink_B": 13504.0,
+   "KiB_round": 99.65625,
+   "MiB_total": 2.433013916015625,
+   "params": 3597,
+   "shared": 3376
+  }
+ },
+ "system": {
+  "timestamp": "2026-11-06 18:53:30",
+  "hostname": "jtn2",
+  "machine": "aarch64",
+  "kernel": "6.8.12-1021-tegra",
+  "os": "\"Ubuntu 24.04.4 LTS\"",
+  "device_model": "NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super",
+  "l4t_release": "# R39 (release), REVISION: 2.1, GCID: 46758480, BOARD: generic, EABI: aarch64, DATE: Fri Aug  7 05:54:22 AM UTC 2026",
+  "nvpmodel": "NV Power Mode: 25W\n1",
+  "cpu_count_logical": 6,
+  "cpu_count_physical": 6,
+  "ram_total_MiB": 7485.56640625,
+  "python": "3.12.3",
+  "numpy": "1.26.4",
+  "pandas_scipy_sklearn": "2.1.4 1.11.4 1.4.1.post1",
+  "blas_threads_env": {
+   "OMP_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null
+  }
+ },
+ "streams_used": [
+  "FULL/ctrl_S07_atk_false_ups",
+  "FULL/ctrl_S08_atk_load_alter",
+  "FULL/ctrl_S09_atk_sensor_spoof",
+  "FULL/ctrl_S10_atk_cooling",
+  "FULL/ctrl_S11_fault_plus_atk",
+  "FULL/ctrl_hide_S07_atk_false_ups",
+  "S02_fault_100ms/A1_S02_fault_100ms",
+  "S02_fault_100ms/A2_S02_fault_100ms",
+  "S02_fault_100ms/A3_S02_fault_100ms",
+  "S02_fault_100ms/A4_S02_fault_100ms",
+  "S02_fault_100ms/A5_S02_fault_100ms",
+  "S02_fault_100ms/T1_S02_fault_100ms",
+  "S02_fault_100ms/T2_S02_fault_100ms",
+  "S02_fault_100ms/T3_S02_fault_100ms",
+  "S02_fault_100ms/T3a_S02_fault_100ms",
+  "S02_fault_100ms/U1_S02_fault_100ms",
+  "S02_fault_100ms/no_attack_S02_fault_100ms",
+  "S03_fault_250ms/A1_S03_fault_250ms",
+  "S03_fault_250ms/A2_S03_fault_250ms",
+  "S03_fault_250ms/A3_S03_fault_250ms",
+  "S03_fault_250ms/A4_S03_fault_250ms",
+  "S03_fault_250ms/A5_S03_fault_250ms",
+  "S03_fault_250ms/T1_S03_fault_250ms",
+  "S03_fault_250ms/T2_S03_fault_250ms",
+  "S03_fault_250ms/T3_S03_fault_250ms",
+  "S03_fault_250ms/T3a_S03_fault_250ms",
+  "S03_fault_250ms/U1_S03_fault_250ms",
+  "S03_fault_250ms/no_attack_S03_fault_250ms",
+  "S04_line_trip/A1_S04_line_trip",
+  "S04_line_trip/A2_S04_line_trip",
+  "S04_line_trip/A3_S04_line_trip",
+  "S04_line_trip/A4_S04_line_trip",
+  "S04_line_trip/A5_S04_line_trip",
+  "S04_line_trip/T1_S04_line_trip",
+  "S04_line_trip/T2_S04_line_trip",
+  "S04_line_trip/T3_S04_line_trip",
+  "S04_line_trip/T3a_S04_line_trip",
+  "S04_line_trip/U1_S04_line_trip",
+  "S04_line_trip/no_attack_S04_line_trip",
+  "S05_load_step/A1_S05_load_step",
+  "S05_load_step/A2_S05_load_step",
+  "S05_load_step/A3_S05_load_step",
+  "S05_load_step/A4_S05_load_step",
+  "S05_load_step/A5_S05_load_step",
+  "S05_load_step/T1_S05_load_step",
+  "S05_load_step/T2_S05_load_step",
+  "S05_load_step/T3_S05_load_step",
+  "S05_load_step/T3a_S05_load_step",
+  "S05_load_step/U1_S05_load_step",
+  "S05_load_step/no_attack_S05_load_step",
+  "S06_multi_event/A1_S06_multi_event",
+  "S06_multi_event/A2_S06_multi_event",
+  "S06_multi_event/A3_S06_multi_event",
+  "S06_multi_event/A4_S06_multi_event",
+  "S06_multi_event/A5_S06_multi_event",
+  "S06_multi_event/T1_S06_multi_event",
+  "S06_multi_event/T2_S06_multi_event",
+  "S06_multi_event/T3_S06_multi_event",
+  "S06_multi_event/T3a_S06_multi_event",
+  "S06_multi_event/U1_S06_multi_event",
+  "S06_multi_event/no_attack_S06_multi_event"
+ ]
+}

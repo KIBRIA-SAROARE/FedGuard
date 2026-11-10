@@ -1,0 +1,53 @@
+[fold] S04_line_trip  train=['S01_normal', 'S02_fault_100ms', 'S03_fault_250ms', 'S06_multi_event']  validation=S05_load_step  mode=central
+[ups] 36 genuine transfers in training+validation; longest transient 0.27 s (G = 2.0 s); highest onset voltage above Vtrip 0.003541564941406228 pu (dV = 0.02)
+[calib] 0.7 s  s_k(DC1)=347.78 MW
+[features] 2.7 s  DC1 auxiliary class share [0.372 0.291 0.337]
+  [central] round  1/25 loss=5.3909
+  [central] round  2/25 loss=4.2478
+  [central] round  3/25 loss=1.6966
+  [central] round  4/25 loss=2.0138
+  [central] round  5/25 loss=0.9577
+  [central] round  6/25 loss=1.1059
+  [central] round  7/25 loss=0.7116
+  [central] round  8/25 loss=0.4276
+  [central] round  9/25 loss=0.5923
+  [central] round 10/25 loss=0.7330
+  [central] round 11/25 loss=2.8887
+  [central] round 12/25 loss=0.3406
+  [central] round 13/25 loss=0.5056
+  [central] round 14/25 loss=0.3590
+  [central] round 15/25 loss=0.2870
+  [central] round 16/25 loss=0.4519
+  [central] round 17/25 loss=0.2864
+  [central] round 18/25 loss=0.2901
+  [central] round 19/25 loss=0.3306
+  [central] round 20/25 loss=0.2895
+  [central] round 21/25 loss=0.8792
+  [central] round 22/25 loss=0.3704
+  [central] round 23/25 loss=0.7327
+  [central] round 24/25 loss=0.3025
+  [central] round 25/25 loss=0.3349
+[train] wall 647.1 s, local time per client {1: 0.0, 2: 0.0, 3: 0.0, 4: 0.0, 5: 0.0, 6: 0.0}
+[rule] physics rule on: fired on 0 validation windows, 0 of them negative
+[fusion] 238.4 s  val=S05_load_step windows=15862 pos=3356  F1=0.6744  kappa=0.0 eta=2.0 thr=-0.9498  edge={'kappa': False, 'eta': False}
+{
+ "params_total": 3597,
+ "params_shared": 3376,
+ "npz_bytes_DC1": 24526,
+ "uplink_bytes_per_client_per_round": 0,
+ "uplink_serialised_bytes": 0,
+ "downlink_bytes_per_client_per_round": 0,
+ "KiB_per_round_all_clients": 0.0,
+ "MiB_to_convergence": 0.0,
+ "DC1_local_train_s_per_round": 0.0,
+ "peak_rss_MiB": 461.390625,
+ "descriptor_bytes": 15,
+ "validation_scenario": "S05_load_step",
+ "train_scenarios": [
+  "S01_normal",
+  "S02_fault_100ms",
+  "S03_fault_250ms",
+  "S06_multi_event"
+ ],
+ "perturb": {}
+}

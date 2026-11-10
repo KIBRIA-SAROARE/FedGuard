@@ -1,0 +1,12 @@
+{
+  "threshold": 38.417030334472656,
+  "val_f1": 0.6645544554455446,
+  "terms": [
+    "|r_bal|",
+    "|r_aux|",
+    "|r_cool|",
+    "|r_ups|",
+    "|r_qp|"
+  ],
+  "source_fold": "/home/jtn2/Desktop/FedGuard-PT/fgpt_jetson_rev/results_rev/folds/S04_line_trip"
+}

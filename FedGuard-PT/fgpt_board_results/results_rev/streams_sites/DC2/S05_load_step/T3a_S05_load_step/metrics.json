@@ -1,0 +1,118 @@
+{
+  "dc": 2,
+  "scenario": "S05_load_step",
+  "test": "T3a",
+  "fold_dir": "/home/jtn2/Desktop/FedGuard-PT/fgpt_jetson_rev/results_rev/folds/S05_load_step",
+  "validation_scenario": "S04_line_trip",
+  "perturb": {},
+  "realtime": false,
+  "net_delay_ms": 0.0,
+  "samples": 29801,
+  "windows": 742,
+  "windows_valid": 558,
+  "windows_pos": 213,
+  "threshold": 2.373503936476982,
+  "streaming_vs_batch_max_abs_diff": 0.0,
+  "prep_s": 1.9872150010050973,
+  "wall_s": 3.465965753988712,
+  "roc_auc": 0.4452745458256787,
+  "pr_auc": 0.35001698894329986,
+  "f1": 0.0,
+  "precision": 0.0,
+  "recall": 0.0,
+  "fpr": 0.0,
+  "n_pos": 213,
+  "n_neg": 345,
+  "physics_rule": {
+    "enabled": true,
+    "fired_windows": 0,
+    "fired_valid_neg": 0,
+    "fired_pos": 0
+  },
+  "clipped_release": {
+    "windows": 0,
+    "windows_valid": 0,
+    "windows_pos": 0
+  },
+  "excluding_clipped": {
+    "roc_auc": 0.4452745458256787,
+    "pr_auc": 0.35001698894329986,
+    "f1": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "fpr": 0.0,
+    "n_pos": 213,
+    "n_neg": 345
+  },
+  "delay_s_notebook": NaN,
+  "attack_events": [
+    {
+      "t0": 98.59,
+      "t1": 127.26,
+      "detected": false,
+      "delay_s": null,
+      "provisional_detected": false,
+      "provisional_delay_s": null
+    },
+    {
+      "t0": 147.97,
+      "t1": 181.35,
+      "detected": false,
+      "delay_s": null,
+      "provisional_detected": false,
+      "provisional_delay_s": null
+    },
+    {
+      "t0": 196.46,
+      "t1": 219.51,
+      "detected": false,
+      "delay_s": null,
+      "provisional_detected": false,
+      "provisional_delay_s": null
+    }
+  ],
+  "provisional_no_csec": {
+    "roc_auc": 0.4452745458256787,
+    "pr_auc": 0.35001698894329986,
+    "f1": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "fpr": 0.0,
+    "n_pos": 213,
+    "n_neg": 345
+  },
+  "disturbance_window_10s": {
+    "event_time_s": 120.0,
+    "neg_windows": 0,
+    "false_alarms": 0
+  },
+  "timing_ms": {
+    "sample_proc_mean": 0.07332860678434372,
+    "sample_proc_p99": 0.108706995844841,
+    "sample_proc_max": 0.5921770334243774,
+    "tcn_sample_proc_mean": 1.822332739830017,
+    "tcn_sample_proc_p99": 2.7809523749351586,
+    "tcn_sample_proc_max": 3.454240083694458,
+    "lateness_mean": -147321.078125,
+    "lateness_p99": -3046.684326171875,
+    "lateness_max": -99.98054504394531,
+    "deadline_misses": 0,
+    "deadline_ms": 10.0,
+    "decision_after_target_mean": -147794.41729274552,
+    "decision_after_target_p99": -4294.966245315287,
+    "decision_after_target_max": -1367.8774220024934,
+    "csec_wait_windows": 0,
+    "csec_wait_max": 0.0,
+    "csec_wait_mean_when_waiting": 0.0,
+    "decision_period_ms": 400.0,
+    "window_ms": 1280.0
+  },
+  "csec": {
+    "site_events": 0,
+    "uplink_bytes": 0,
+    "fleet_events": 3,
+    "fleet_bytes": 45
+  },
+  "peak_rss_MiB": 268.24609375,
+  "warmup_s": 10.0
+}

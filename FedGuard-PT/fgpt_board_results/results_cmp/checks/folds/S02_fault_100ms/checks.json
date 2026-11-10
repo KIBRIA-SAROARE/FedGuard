@@ -1,0 +1,12 @@
+{
+  "threshold": 47.46174621582031,
+  "val_f1": 0.6548295454545454,
+  "terms": [
+    "|r_bal|",
+    "|r_aux|",
+    "|r_cool|",
+    "|r_ups|",
+    "|r_qp|"
+  ],
+  "source_fold": "/home/jtn2/Desktop/FedGuard-PT/fgpt_jetson_rev/results_rev/folds/S02_fault_100ms"
+}

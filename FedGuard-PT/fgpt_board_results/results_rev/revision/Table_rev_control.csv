@@ -1,0 +1,15 @@
+scenario,site,test,roc_auc,recall,fpr,pos_windows,intervals,delay_released_s,realtime
+S07_atk_false_ups,DC1,ctrl,1.0,1.0,0.1066,75,1/1,0.08,True
+S07_atk_false_ups,DC4,ctrl,1.0,1.0,0.0437,75,1/1,0.08,True
+S07_atk_false_ups,DC1,ctrl_hide,1.0,1.0,0.1066,75,1/1,0.08,True
+S07_atk_false_ups,DC4,ctrl_hide,1.0,1.0,0.0437,75,1/1,0.08,True
+S08_atk_load_alter,DC1,ctrl,--,--,0.0262,0,--,--,True
+S08_atk_load_alter,DC2,ctrl,0.7075,0.227,0.0463,150,1/1,4.08,True
+S08_atk_load_alter,DC5,ctrl,0.9994,1.0,0.0402,150,1/1,0.08,True
+S09_atk_sensor_spoof,DC1,ctrl,--,--,0.0234,0,--,--,True
+S09_atk_sensor_spoof,DC3,ctrl,1.0,1.0,0.0165,100,1/1,0.08,True
+S09_atk_sensor_spoof,DC3,ctrl_hide,1.0,1.0,0.0165,100,1/1,0.08,True
+S10_atk_cooling,DC1,ctrl,--,--,0.0262,0,--,--,True
+S10_atk_cooling,DC6,ctrl,0.9987,0.992,0.0594,125,1/1,0.08,True
+S11_fault_plus_atk,DC1,ctrl,--,--,0.0621,0,--,--,True
+S11_fault_plus_atk,DC6,ctrl,0.7272,0.347,0.0507,75,1/1,5.68,True

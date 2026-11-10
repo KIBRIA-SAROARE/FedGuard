@@ -1,0 +1,106 @@
+{
+  "plans": [
+    "quick"
+  ],
+  "loso_tests": [
+    "no_attack",
+    "T1",
+    "T2",
+    "T3a",
+    "T3",
+    "U1",
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5"
+  ],
+  "attacked": [
+    [
+      "ctrl",
+      "S07_atk_false_ups",
+      4
+    ],
+    [
+      "ctrl",
+      "S08_atk_load_alter",
+      2
+    ],
+    [
+      "ctrl",
+      "S08_atk_load_alter",
+      5
+    ],
+    [
+      "ctrl",
+      "S09_atk_sensor_spoof",
+      3
+    ],
+    [
+      "ctrl",
+      "S10_atk_cooling",
+      6
+    ],
+    [
+      "ctrl",
+      "S11_fault_plus_atk",
+      6
+    ],
+    [
+      "ctrl_hide",
+      "S07_atk_false_ups",
+      4
+    ],
+    [
+      "ctrl_hide",
+      "S09_atk_sensor_spoof",
+      3
+    ]
+  ],
+  "sens_cases": {
+    "base": {},
+    "noise1": {
+      "noise": 1
+    },
+    "noise3": {
+      "noise": 3
+    },
+    "kv04": {
+      "k_v": 0.4
+    },
+    "kv06": {
+      "k_v": 0.6
+    },
+    "fvfd09": {
+      "fvfd_scale": 0.9
+    },
+    "tau12": {
+      "tau_scale": 1.2
+    }
+  },
+  "net_delay_ms": 0.0,
+  "cooldown_s": 20,
+  "idle_s": 60,
+  "no_realtime": false,
+  "system": {
+    "timestamp": "2026-11-05 19:40:34",
+    "hostname": "jtn2",
+    "machine": "aarch64",
+    "kernel": "6.8.12-1021-tegra",
+    "os": "\"Ubuntu 24.04.4 LTS\"",
+    "device_model": "NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super",
+    "l4t_release": "# R39 (release), REVISION: 2.1, GCID: 46758480, BOARD: generic, EABI: aarch64, DATE: Fri Aug  7 05:54:22 AM UTC 2026",
+    "nvpmodel": "NV Power Mode: 25W\n1",
+    "cpu_count_logical": 6,
+    "cpu_count_physical": 6,
+    "ram_total_MiB": 7485.56640625,
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "pandas_scipy_sklearn": "2.1.4 1.11.4 1.4.1.post1",
+    "blas_threads_env": {
+      "OMP_NUM_THREADS": null,
+      "OPENBLAS_NUM_THREADS": null
+    }
+  },
+  "jetson_clocks": "SOC family:tegra234  Machine:NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super\nError: Run this script(/usr/bin/jetson_clocks) as a root user"
+}

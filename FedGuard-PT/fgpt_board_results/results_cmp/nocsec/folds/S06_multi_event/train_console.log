@@ -1,0 +1,7 @@
+[fold] S06_multi_event  train=['S01_normal', 'S03_fault_250ms', 'S04_line_trip', 'S05_load_step']  validation=S02_fault_100ms  mode=partial
+[ups] 23 genuine transfers in training+validation; longest transient 0.27 s (G = 2.0 s); highest onset voltage above Vtrip 0.003541564941406228 pu (dV = 0.02)
+[calib] 0.7 s  s_k(DC1)=347.78 MW
+[features] 2.7 s  DC1 auxiliary class share [0.367 0.298 0.335]
+[train] skipped (--refit-fusion): loaded the fold's trained models
+[rule] physics rule on: fired on 9 validation windows, 0 of them negative
+[fusion] 25.9 s  val=S02_fault_100ms windows=16074 pos=4092  F1=0.6965  kappa=0.0 eta=0.0 thr=0.6381  edge={'kappa': True, 'eta': True}

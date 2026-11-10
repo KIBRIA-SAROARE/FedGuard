@@ -1,0 +1,90 @@
+{
+  "system": {
+    "timestamp": "2026-11-09 19:18:11",
+    "hostname": "jtn2",
+    "machine": "aarch64",
+    "kernel": "6.8.12-1021-tegra",
+    "os": "\"Ubuntu 24.04.4 LTS\"",
+    "device_model": "NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super",
+    "l4t_release": "# R39 (release), REVISION: 2.1, GCID: 46758480, BOARD: generic, EABI: aarch64, DATE: Fri Aug  7 05:54:22 AM UTC 2026",
+    "nvpmodel": "NV Power Mode: 25W\n1",
+    "cpu_count_logical": 6,
+    "cpu_count_physical": 6,
+    "ram_total_MiB": 7485.5078125,
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "pandas_scipy_sklearn": "2.1.4 1.11.4 1.4.1.post1",
+    "blas_threads_env": {
+      "OMP_NUM_THREADS": null,
+      "OPENBLAS_NUM_THREADS": null
+    }
+  },
+  "timing": {
+    "calibration_6_clients_s": 0.6974635669903364,
+    "train_features_s": 2.698208609013818,
+    "fusion_fit_s": 241.19428042901563
+  },
+  "train_stats": {
+    "mode": "central",
+    "rounds": 25,
+    "bytes_up": 0,
+    "bytes_down": 0,
+    "local_time_s": 649.5174050639907,
+    "local_time_per_client_s": {
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0,
+      "5": 0.0,
+      "6": 0.0
+    },
+    "convergence": [
+      5.390890228748321,
+      4.2478330671787266,
+      1.6966265320777894,
+      2.0138357520103454,
+      0.9577270030975342,
+      1.1058702141046524,
+      0.7115872025489807,
+      0.42761632800102234,
+      0.5923135280609131,
+      0.7330367863178253,
+      2.8886588022112845,
+      0.34062144756317136,
+      0.5055625826120377,
+      0.3589982599020004,
+      0.28695809841156006,
+      0.4519416570663452,
+      0.2864213868975639,
+      0.29012092724442484,
+      0.330560877174139,
+      0.289454609900713,
+      0.8792166262865067,
+      0.37042385563254354,
+      0.7327102348208427,
+      0.3024670697748661,
+      0.33494758233428
+    ],
+    "round_log": [],
+    "wall_s": 649.5289162959962
+  },
+  "params_total": 3597,
+  "params_shared": 3376,
+  "npz_bytes_DC1": 24526,
+  "uplink_bytes_per_client_per_round": 0,
+  "uplink_serialised_bytes": 0,
+  "downlink_bytes_per_client_per_round": 0,
+  "KiB_per_round_all_clients": 0.0,
+  "MiB_to_convergence": 0.0,
+  "DC1_local_train_s_per_round": 0.0,
+  "peak_rss_MiB": 461.4609375,
+  "descriptor_bytes": 15,
+  "validation_scenario": "S04_line_trip",
+  "train_scenarios": [
+    "S01_normal",
+    "S02_fault_100ms",
+    "S03_fault_250ms",
+    "S06_multi_event"
+  ],
+  "perturb": {}
+}

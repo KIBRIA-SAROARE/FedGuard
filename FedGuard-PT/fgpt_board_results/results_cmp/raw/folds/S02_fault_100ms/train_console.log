@@ -1,0 +1,53 @@
+[fold] S02_fault_100ms  train=['S01_normal', 'S04_line_trip', 'S05_load_step', 'S06_multi_event']  validation=S03_fault_250ms  mode=partial
+[ups] 23 genuine transfers in training+validation; longest transient 0.27 s (G = 2.0 s); highest onset voltage above Vtrip 0.003541564941406228 pu (dV = 0.02)
+[calib] 0.7 s  s_k(DC1)=347.78 MW
+[features] 2.7 s  DC1 auxiliary class share [0.367 0.301 0.332]
+  round  1/25  mean loss=7.2356  local s/client=4.34
+  round  2/25  mean loss=8.8580  local s/client=4.38
+  round  3/25  mean loss=5.4112  local s/client=4.40
+  round  4/25  mean loss=6.2699  local s/client=4.42
+  round  5/25  mean loss=4.0677  local s/client=4.40
+  round  6/25  mean loss=5.2191  local s/client=4.38
+  round  7/25  mean loss=6.1753  local s/client=4.37
+  round  8/25  mean loss=4.2309  local s/client=4.37
+  round  9/25  mean loss=4.8336  local s/client=4.36
+  round 10/25  mean loss=2.1613  local s/client=4.37
+  round 11/25  mean loss=1.5367  local s/client=4.34
+  round 12/25  mean loss=3.1424  local s/client=4.35
+  round 13/25  mean loss=1.4775  local s/client=4.31
+  round 14/25  mean loss=1.5880  local s/client=4.29
+  round 15/25  mean loss=0.8105  local s/client=4.32
+  round 16/25  mean loss=0.9307  local s/client=4.31
+  round 17/25  mean loss=1.4357  local s/client=4.29
+  round 18/25  mean loss=1.0407  local s/client=4.33
+  round 19/25  mean loss=1.7073  local s/client=4.34
+  round 20/25  mean loss=1.1123  local s/client=4.38
+  round 21/25  mean loss=0.7100  local s/client=4.33
+  round 22/25  mean loss=0.7594  local s/client=4.32
+  round 23/25  mean loss=0.5602  local s/client=4.32
+  round 24/25  mean loss=0.6078  local s/client=4.33
+  round 25/25  mean loss=0.9641  local s/client=4.32
+[train] wall 652.4 s, local time per client {1: 108.6, 2: 108.6, 3: 108.7, 4: 108.8, 5: 108.6, 6: 108.6}
+[rule] physics rule on: fired on 0 validation windows, 0 of them negative
+[fusion] 236.9 s  val=S03_fault_250ms windows=15772 pos=3688  F1=0.7245  kappa=32.0 eta=4.0 thr=-1.1605  edge={'kappa': True, 'eta': False}
+{
+ "params_total": 3485,
+ "params_shared": 3264,
+ "npz_bytes_DC1": 24078,
+ "uplink_bytes_per_client_per_round": 3392.0,
+ "uplink_serialised_bytes": 3392,
+ "downlink_bytes_per_client_per_round": 13056.0,
+ "KiB_per_round_all_clients": 96.375,
+ "MiB_to_convergence": 2.3529052734375,
+ "DC1_local_train_s_per_round": 4.342855334640481,
+ "peak_rss_MiB": 408.5625,
+ "descriptor_bytes": 15,
+ "validation_scenario": "S03_fault_250ms",
+ "train_scenarios": [
+  "S01_normal",
+  "S04_line_trip",
+  "S05_load_step",
+  "S06_multi_event"
+ ],
+ "perturb": {}
+}

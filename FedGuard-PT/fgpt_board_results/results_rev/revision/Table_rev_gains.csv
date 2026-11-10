@@ -1,0 +1,7 @@
+fold,validation,lambda_c,lambda_u,tau,val_F1,val_windows,val_pos,val_csec_windows,lambda_c_at_edge,lambda_u_at_edge,train
+FULL,S06_multi_event,8.0,4.0,-1.1797,0.7468,15614,4928,665,False,False,S01_normal;S02_fault_100ms;S03_fault_250ms;S04_line_trip;S05_load_step
+S02_fault_100ms,S03_fault_250ms,8.0,8.0,-0.8714,0.7209,15772,3688,571,False,False,S01_normal;S04_line_trip;S05_load_step;S06_multi_event
+S03_fault_250ms,S02_fault_100ms,4.0,8.0,-1.222,0.7324,16074,4092,795,False,False,S01_normal;S04_line_trip;S05_load_step;S06_multi_event
+S04_line_trip,S05_load_step,0.0,0.0,-1.3602,0.6732,15862,3356,104,False,False,S01_normal;S02_fault_100ms;S03_fault_250ms;S06_multi_event
+S05_load_step,S04_line_trip,0.0,512.0,2.3735,0.6995,16082,3352,224,False,False,S01_normal;S02_fault_100ms;S03_fault_250ms;S06_multi_event
+S06_multi_event,S02_fault_100ms,4.0,16.0,-0.7313,0.7258,16074,4092,795,False,False,S01_normal;S03_fault_250ms;S04_line_trip;S05_load_step

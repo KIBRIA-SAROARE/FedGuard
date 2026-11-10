@@ -1,0 +1,92 @@
+{
+  "dc": 6,
+  "scenario": "S05_load_step",
+  "test": "no_attack",
+  "fold_dir": "/home/jtn2/Desktop/FedGuard-PT/fgpt_jetson_rev/results_rev/folds/S05_load_step",
+  "validation_scenario": "S04_line_trip",
+  "perturb": {},
+  "realtime": false,
+  "net_delay_ms": 0.0,
+  "samples": 29801,
+  "windows": 742,
+  "windows_valid": 742,
+  "windows_pos": 0,
+  "threshold": 2.373503936476982,
+  "streaming_vs_batch_max_abs_diff": 1.1568808133688435e-09,
+  "prep_s": 1.2645699650020106,
+  "wall_s": 3.4753745600028196,
+  "roc_auc": NaN,
+  "pr_auc": NaN,
+  "f1": 0.0,
+  "precision": 0.0,
+  "recall": 0.0,
+  "fpr": 0.0,
+  "n_pos": 0,
+  "n_neg": 742,
+  "physics_rule": {
+    "enabled": true,
+    "fired_windows": 0,
+    "fired_valid_neg": 0,
+    "fired_pos": 0
+  },
+  "clipped_release": {
+    "windows": 0,
+    "windows_valid": 0,
+    "windows_pos": 0
+  },
+  "excluding_clipped": {
+    "roc_auc": NaN,
+    "pr_auc": NaN,
+    "f1": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "fpr": 0.0,
+    "n_pos": 0,
+    "n_neg": 742
+  },
+  "delay_s_notebook": NaN,
+  "attack_events": [],
+  "provisional_no_csec": {
+    "roc_auc": NaN,
+    "pr_auc": NaN,
+    "f1": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "fpr": 0.0,
+    "n_pos": 0,
+    "n_neg": 742
+  },
+  "disturbance_window_10s": {
+    "event_time_s": 120.0,
+    "neg_windows": 29,
+    "false_alarms": 0
+  },
+  "timing_ms": {
+    "sample_proc_mean": 0.07336028665304184,
+    "sample_proc_p99": 0.10875244483351702,
+    "sample_proc_max": 0.5642080307006836,
+    "tcn_sample_proc_mean": 1.8333418369293213,
+    "tcn_sample_proc_p99": 2.7531156563758863,
+    "tcn_sample_proc_max": 4.136498928070068,
+    "lateness_mean": -147320.78125,
+    "lateness_p99": -3046.364990234375,
+    "lateness_max": -99.97379302978516,
+    "deadline_misses": 0,
+    "deadline_ms": 10.0,
+    "decision_after_target_mean": -147794.051771929,
+    "decision_after_target_p99": -4294.69170555733,
+    "decision_after_target_max": -1366.381732004811,
+    "csec_wait_windows": 4,
+    "csec_wait_max": 1700.0,
+    "csec_wait_mean_when_waiting": 1100.0,
+    "decision_period_ms": 400.0,
+    "window_ms": 1280.0
+  },
+  "csec": {
+    "site_events": 1,
+    "uplink_bytes": 15,
+    "fleet_events": 3,
+    "fleet_bytes": 45
+  },
+  "peak_rss_MiB": 262.1640625
+}
